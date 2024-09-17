@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Maquillaje</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <x-sign class="tienda">
+        Make-up Fun
+    </x-sign>
+    <x-sign>
+        Come back soon
+    </x-sign>
+
+    <!-- Barra de búsqueda -->
+    <input type="text" id="buscador" placeholder="Buscar productos..." oninput="filtrarProductos()">
+
+    <div id="loading"  class="cargar" style="text-align: center; display:none;">
+        <p>Cargando productos</p>
+    </div>
+
+    <!-- Sección para mostrar productos -->
+    <section id="productos" class="productos-container">
+        <!-- Los productos se cargarán aquí dinámicamente -->
+    </section>
+
+    <!-- Plantilla para las cards de producto -->
+    <template id="producto-template">
+        <div class="producto">
+            <img src="" alt="">
+            <h2>Nombre del Producto</h2>
+            <p class="marca">Marca</p>
+            <p class="precio">Precio</p>
+
+            <!-- Sección del carrito -->
+            <div class="carrito-seccion">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" min="1" value="1" class="cantidad-input">
+                <button class="agregar-carrito-btn">Agregar al carrito</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Botón para ver el carrito -->
+    <button id="ver-carrito-btn" style="position: fixed; bottom: 20px; left: 20px;" >
+        Ver carrito
+    </button>
+
+    <!-- Modal para mostrar el carrito -->
+    <div id="carrito-modal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+        <h2>Tu Carrito de Compras</h2>
+        <div id="carrito-lista"></div>
+        <button id="cerrar-carrito-btn">Cerrar</button>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

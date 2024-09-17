@@ -1,0 +1,360 @@
+/* Estilos básicos para las cards */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d19898;
+}
+
+/* Estilos para el título y el texto con efecto */
+x-sign {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: calc(1.5em + 2vmin);
+    text-shadow:
+        0 0 10px var(--color1),
+        0 0 20px var(--color2),
+        0 0 40px var(--color3),
+        0 0 80px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+.marca {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.precio {
+    font-family: "Anton", sans-serif;
+    font-style: normal;
+}
+
+.cargar {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Animación de parpadeo */
+@keyframes flicker {
+    50% {
+        color: white;
+        filter: saturate(200%) hue-rotate(20deg);
+    }
+}
+
+/* Efecto personalizado para el título "Tienda de Maquillaje" */
+x-sign.tienda {
+    color: lightpink;
+    --color1: pink;
+    --color2: orangered;
+    --color3: red;
+    --color4: magenta;
+    font-family: 'Bad Script', cursive;
+    /* Cambia la fuente si lo prefieres */
+}
+
+/* Efecto de "Come back soon" */
+x-sign:nth-of-type(2) {
+    color: lightpink;
+    --color1: pink;
+    --color2: orangered;
+    --color3: red;
+    --color4: magenta;
+    font-family: 'Bad Script', cursive;
+}
+
+/* Resto de estilos para productos */
+#buscador {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    background-color: #f0b7b7;
+    border: #f0b7b7;
+
+}
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.producto h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.producto p {
+    font-size: 1rem;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.producto p.precio {
+    font-weight: bold;
+    color: #141211;
+}
+
+/* Estilos para la sección del carrito en cada producto */
+.carrito-seccion {
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.cantidad-input {
+    width: 50px;
+    margin-right: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.agregar-carrito-btn {
+    background-color: #bf908b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#ver-carrito-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Estilos del modal del carrito */
+#carrito-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px; /* Aumenta el tamaño máximo si es necesario */
+    max-height: 80vh; /* Limita la altura del modal */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura */
+    z-index: 1000;
+}
+#carrito-modal h2 {
+    margin-top: 0;
+}
+
+#carrito-lista {
+    margin-top: 20px;
+}
+
+#cerrar-carrito-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cerrar-carrito-btn:hover {
+    background-color: #d32f2f;
+}
+
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+#cerrar-carrito-btn {
+    margin-top: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carrito-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.carrito-tabla th,
+.carrito-tabla td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.carrito-tabla th {
+    background-color: #f2f2f2;
+}
+
+.imagen-carrito {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+
+
+#ver-carrito-btn:hover {
+    background-color: #e17fe3;
+}
+
+.carrito-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.carrito-tabla th,
+.carrito-tabla td {
+    border: 1px solid #de9e9e;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.carrito-tabla th {
+    background-color: #de9e9e;
+}
+
+.imagen-carrito {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+#carrito-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+#carrito-modal h2 {
+    margin-top: 0;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#carrito-lista {
+    margin-top: 20px;
+}
+
+#cerrar-carrito-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#cerrar-carrito-btn {
+    background-color: #d32f2f;
+}
+.mensaje-envio-gratis{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.botonfin{
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #28b348;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
